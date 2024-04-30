@@ -54,12 +54,12 @@ function TAMA({ setAlert }) {
     setpetAction("Idle");
   }
   useEffect(() => {
-    axios.get(`http://localhost:3001/pets/byName/${username}`)
+    axios.get(`https://tama.up.railway.app/pets/byName/${username}`)
       .then((response) => {
         const petData = response.data[0];
         setPet(petData);
         if (petData) {
-          axios.get(`http://localhost:3001/dialogues/${petData.personality}`)
+          axios.get(`https://tama.up.railway.app/dialogues/${petData.personality}`)
             .then((response) => {
               const fetchedDialogues = response.data;
               console.log("Dialogues fetched successfully:", fetchedDialogues);
@@ -80,7 +80,7 @@ function TAMA({ setAlert }) {
     if(value > 100){
       value =100;
     }
-    axios.put(`http://localhost:3001/pets/updateStats/${pet.id}`, { stat, value })
+    axios.put(`https://tama.up.railway.app/pets/updateStats/${pet.id}`, { stat, value })
       .then(response => {
         console.log(`Pet ${stat} increased`);
         setPet({ ...pet, [stat]: value });

@@ -12,7 +12,7 @@ function Login({ setAlert }) {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("http://localhost:3001/auth/login", data).then((response) => {
+    axios.post("https://tama.up.railway.app/auth/login", data).then((response) => {
       if (response.data.error) {
         setAlert({ message: response.data.error, type: "error" });
       } else {
@@ -30,7 +30,7 @@ function Login({ setAlert }) {
 
   const fetchPetInformation = (username) => {
     console.log("INSIDE OF FETCH DATA.");
-    axios.get(`http://localhost:3001/pets/byName/${username}`)
+    axios.get(`https://tama.up.railway.app/pets/byName/${username}`)
       .then((response) => {
         const petData = response.data[0];
         if (petData) {
@@ -67,7 +67,7 @@ function Login({ setAlert }) {
       affection: updatedAffection,
     };
 
-    axios.put(`http://localhost:3001/pets/updateLogin/${petData.id}`, updatedStats)
+    axios.put(`https://tama.up.railway.app/pets/updateLogin/${petData.id}`, updatedStats)
       .then(response => {
         console.log("Pet stats adjusted successfully");
       })

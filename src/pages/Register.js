@@ -24,7 +24,7 @@ function Register({ setAlert }) {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/auth/register", data)
+      .post("https://tama.up.railway.app/auth/register", data)
       .then((response) => {
         console.log("User Registered");
         navigate("/Login");

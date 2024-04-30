@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
+      .get("https://tama.up.railway.app/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

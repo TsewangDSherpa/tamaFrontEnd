@@ -11,7 +11,7 @@ function Profile({ setAlert }) {
     const [newPassword, setNewPassword] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/auth/info/${username}`).then((response) => {
+        axios.get(`https://tama.up.railway.app/auth/info/${username}`).then((response) => {
             setUser(response.data);
         });
     }, []);
@@ -19,10 +19,10 @@ function Profile({ setAlert }) {
     const handleUpdateEmail = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:3001/auth/updateemail/${username}`, {
+            await axios.put(`https://tama.up.railway.app/auth/updateemail/${username}`, {
                 email: newEmail
             });
-            const response = await axios.get(`http://localhost:3001/auth/info/${username}`);
+            const response = await axios.get(`https://tama.up.railway.app/auth/info/${username}`);
             setUser(response.data);
             setAlert({ message: "Email updated successfully", type: "success" }); 
         } catch (error) {
@@ -34,10 +34,10 @@ function Profile({ setAlert }) {
     const handleUpdatePassword = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:3001/auth/updatepassword/${username}`, {
+            await axios.put(`https://tama.up.railway.app/auth/updatepassword/${username}`, {
                 password: newPassword
             });
-            const response = await axios.get(`http://localhost:3001/auth/info/${username}`);
+            const response = await axios.get(`https://tama.up.railway.app/auth/info/${username}`);
             setUser(response.data);
             setAlert({ message: "Password updated successfully", type: "success" }); 
         } catch (error) {
