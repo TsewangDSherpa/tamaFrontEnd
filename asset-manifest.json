@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/tamaFrontEnd/static/css/main.e506b368.css",
+    "main.js": "/tamaFrontEnd/static/js/main.997f3d19.js",
+    "static/js/453.ed3810f9.chunk.js": "/tamaFrontEnd/static/js/453.ed3810f9.chunk.js",
+    "static/media/PetSprte.png": "/tamaFrontEnd/static/media/PetSprte.b6ecd65cd7e9b841bdd4.png",
+    "static/media/anime.gif": "/tamaFrontEnd/static/media/anime.abf7169856568b484a33.gif",
+    "static/media/petchirp.mp4": "/tamaFrontEnd/static/media/petchirp.12fe9bba45e57884a8ba.mp4",
+    "static/media/petsnores.mp4": "/tamaFrontEnd/static/media/petsnores.a1fce088ddafdd4fd212.mp4",
+    "static/media/petmunch.mp4": "/tamaFrontEnd/static/media/petmunch.198639884d1f8ace8244.mp4",
+    "static/media/pettoy.mp4": "/tamaFrontEnd/static/media/pettoy.da2397100efa679bad1b.mp4",
+    "index.html": "/tamaFrontEnd/index.html",
+    "main.e506b368.css.map": "/tamaFrontEnd/static/css/main.e506b368.css.map",
+    "main.997f3d19.js.map": "/tamaFrontEnd/static/js/main.997f3d19.js.map",
+    "453.ed3810f9.chunk.js.map": "/tamaFrontEnd/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e506b368.css",
+    "static/js/main.997f3d19.js"
+  ]
+}
