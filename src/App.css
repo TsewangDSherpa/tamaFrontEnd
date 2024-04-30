@@ -1,0 +1,112 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-image: url("https://cdn.vectorstock.com/i/500p/81/34/cartoon-winter-nature-landscape-frozen-pond-lake-vector-41328134.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.App-logo {
+  height: 4vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Stats_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3em;
+}
+
+.TemporaryVid {
+
+  display: block;
+  width: 25em;
+  height: 25em;
+}
+
+
+/*log in/register*/
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formContainer {
+  width: 300px;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formContainer label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formContainer input[type="text"],
+.formContainer input[type="email"],
+.formContainer input[type="password"] {
+  width: calc(100% - 16px); 
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.formContainer button {
+  width: calc(100% - 16px);
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.formContainer button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}
