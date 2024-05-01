@@ -325,7 +325,7 @@ function TAMA({ setAlert }) {
         payload={{
           pet_name: pet.name,
           user_name: username,
-          personality_number: 1,
+          personality_number: pet.personality,
           message: "",
           pet_stats: { hunger: 100-pet.hunger, sleepiness: pet.sleepiness, fun: pet.fun, affection: pet.fun }
         }}
