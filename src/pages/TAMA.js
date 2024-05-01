@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { AuthContext } from "../helpers/AuthContext";
-import anime from '../anime.gif'
 import chirp from '../petchirp.mp4'
 import snore from '../petsnores.mp4'
 import toy from '../pettoy.mp4'
@@ -12,6 +11,7 @@ import apple from "../Apple.png";
 import guava from "../Guava.png";
 import strawberry from "../Strawberry.png";
 import orange from "../ornage.png";
+import Chat from "./Chat";
 const styles = `
   @keyframes shimmer {
     from {
@@ -320,7 +320,19 @@ function TAMA({ setAlert }) {
 
           </div>
         )}
+       {pet && (
+       <Chat 
+        payload={{
+          pet_name: pet.name,
+          user_name: username,
+          personality_number: 1,
+          message: "",
+          pet_stats: { hunger: 100-pet.hunger, sleepiness: pet.sleepiness, fun: pet.fun, affection: pet.fun }
+        }}
+      />)}
       </div>
+
+     
     </div>
 
   );
