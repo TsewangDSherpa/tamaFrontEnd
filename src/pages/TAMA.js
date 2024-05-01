@@ -8,15 +8,29 @@ import snore from '../petsnores.mp4'
 import toy from '../pettoy.mp4'
 import munch from '../petmunch.mp4'
 import PetCanvas from "../components/reusable/PetCanvas";
-
-
+import apple from "../Apple.png";
+import guava from "../Guava.png";
+import strawberry from "../Strawberry.png";
+import orange from "../ornage.png";
+const styles = `
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 0;
+    }
+  }
+`;
 
 const StatContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
     flex-direction: column;
-`
+    
+    
+`;
 
 const TextBox = styled.div`
     align-items: center;
@@ -27,20 +41,26 @@ const ButtonContainer = styled.div`
     display: flex;
     gap: 20px;
     flex-direction: row;
+   
 `
 
 const StyledButton = styled.button`
     width: 100px; 
     height: 100px;
-    border-width: 1px;
+    border:none;
     border-radius: 42%;
     border:1 none;
+    background-size:cover;
     &:hover {
-        background-color: #04AA6D; /* Green */
-        color: white;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+        border-radius: 50%;
+        transform: scale(1.6);
     }
 `;
 
+const backgroundImageUrls = [
+ apple, orange, guava, strawberry
+];
 
 function TAMA({ setAlert }) {
   const [pet, setPet] = useState(null);
@@ -238,23 +258,36 @@ function TAMA({ setAlert }) {
   return ( 
     <div style={{ margin: "auto" }}>
       <div className='Stats_container'>
-          <div style={{backgroundColor:"#33223301", borderRadius:"50%", boxShadow:"2px 3px 4px 4px"}}>
+          <div className="gradient" style={{borderRadius:"50%",  background: 'linear-gradient(to right, rgba(0,0,0,0.2), rgba(50,205,50,0.5), darkturquoise, rgba(0,0,0,0.2))',
+        backgroundSize: '200%',
+        backgroundPosition: '0% 0',
+        backgroundAttachment: 'fixed',
+        animation: 'shimmer 4s linear infinite alternate',}}>
+          <style>{styles}</style>
           <PetCanvas givenaction={petAction} resetaction={resetaction}></PetCanvas>
           </div>
       </div>
-      <div className='Stats_container'>
+      <div className='Stats_container' style={{backgroundColor:"white", padding:"1em", margin:"1em", boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}}>
         {pet && (
           <div>
-            <div className='DialogueBox' style={{backgroundColor:"#33333322", padding:"1.5em", margin:"1.4em"}}>
+            <div className='DialogueBox gradient' style={{backgroundColor:"#FFFFFF", padding:"1.5em", margin:"1.4em" , boxShadow:"rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px", background: 'linear-gradient(to left, rgba(0,0,0,0.2), rgba(50,205,50,0.2), rgba(50,205,50,0.2), rgba(0,0,0,0.2))',
+        backgroundSize: '200%',
+        backgroundPosition: '0% 0',
+        backgroundAttachment: 'fixed',
+        animation: 'shimmer 4s linear infinite alternate',}}>
             <h2>{pet.name} says:</h2>
             <h3>{dialogue[Math.floor(Math.random() * dialogue.length)]}</h3>
             <p>Personality: {getPersonalityName(pet.personality)}</p>
           </div>
-            <ButtonContainer>
-              <StatContainer>
+            <ButtonContainer style={{fontFamily:"cursive, Georgia, serif"}}>
+              <StatContainer >
                 <audio id="munchAudio" src={munch}></audio>
-                <StyledButton onClick={() => { playSound("munchAudio", pet.hunger); feed(pet.personality);}}>
-                  FEED
+                <StyledButton  id = "foodButton" onClick={() => { playSound("munchAudio", pet.hunger); feed(pet.personality);   const randomIndex = Math.floor(Math.random() * backgroundImageUrls.length);
+    const randomImage = backgroundImageUrls[randomIndex];
+    const button = document.getElementById('foodButton');
+    button.innerHTML = "";
+    button.style.backgroundImage = `url(${randomImage})`;}}>
+      FEED
                 </StyledButton>
                 <progress value={(pet.hunger / 100) * 100} max={100}></progress>
                 <p>Full Belly: {pet.hunger} / 100</p>
